@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Claudia — Tu Refugio Seguro 💜</title>
+    <style>
+        :root {
+            --lavender-50: #f9f8fd;
+            --lavender-100: #f3f0fa;
+            --lavender-200: #e5e0f5;
+            --lavender-300: #d1c7ec;
+            --lavender-400: #b4a3e2;
+            --lavender-500: #957cd4;
+            --lavender-600: #7b60bc;
+            --lavender-700: #644e99;
+            --cream: #fdfcf7;
+            --warmbeige: #f6f1eb;
+            --softrose: #faeef2;
+            --oliveaccent: #657a62;
+            --text-main: #3f3a4d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif, system-ui;
+            background: radial-gradient(circle at 50% 10%, #fefdfb 0%, #f4eff8 40%, #e6def2 100%);
+            min-height: 100vh;
+            color: var(--text-main);
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            scroll-behavior: smooth;
+        }
+
+        /* Estrellas y partículas flotantes cálidas */
+        .star {
+            position: absolute;
+            background: #ffffff;
+            border-radius: 50%;
+            animation: floatStar linear infinite;
+            opacity: 0.6;
+            box-shadow: 0 0 10px rgba(180, 163, 226, 0.7);
+            pointer-events: none;
+        }
+
+        @keyframes floatStar {
+            0% { transform: translateY(0vh) translateX(0vw) scale(0.6); opacity: 0.1; }
+            50% { opacity: 0.85; }
+            100% { transform: translateY(-110vh) translateX(15vw) scale(1.3); opacity: 0; }
+        }
+
+        /* Controles superiores (Música y Botón Secreto) */
+        .top-controls {
+            position: fixed;
+            top: 1.25rem;
+            right: 1.25rem;
+            z-index: 50;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .control-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.6rem 1rem;
+            background: rgba(255, 255, 255, 0.92);
+            color: var(--lavender-700);
+            border-radius: 9999px;
+            box-shadow: 0 10px 30px rgba(100, 78, 153, 0.12);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--lavender-200);
+            font-size: 0.825rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .control-btn:hover {
+            background: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Contenido Principal */
+        main {
+            position: relative;
+            z-index: 10;
+            flex-grow: 1;
+            max-width: 50rem;
+            margin: 0 auto;
+            padding: 3.5rem 1rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 3.5rem;
+        }
+
+        /* Efecto vidrio esmerilado refinado */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(235, 228, 245, 0.9);
+            box-shadow: 0 20px 45px rgba(123, 96, 188, 0.09);
+            border-radius: 2.5rem;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+        }
+
+        @media (min-width: 768px) {
+            .glass-card { padding: 3.5rem; }
+        }
+
+        .glass-card-hover {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+        }
+        .glass-card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 55px rgba(123, 96, 188, 0.16);
+            background: rgba(255, 255, 255, 0.96);
+        }
+
+        /* Bienvenida a Casa */
+        .welcome-section { text-align: center; }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1.1rem;
+            background: rgba(243, 240, 250, 0.9);
+            color: var(--lavender-700);
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            border: 1px solid var(--lavender-200);
+            margin-bottom: 1.2rem;
+            box-shadow: 0 4px 12px rgba(149, 124, 212, 0.08);
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #2b233c;
+            letter-spacing: -0.025em;
+            margin-bottom: 1.5rem;
+        }
+
+        .pulse-heart {
+            color: var(--lavender-500);
+            display: inline-block;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .welcome-text {
+            max-width: 32rem;
+            margin: 0 auto;
+            color: #5c536d;
+            font-size: 1.125rem;
+            line-height: 1.8;
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .final-rest {
+            color: var(--lavender-700);
+            font-weight: 700;
+            font-size: 1.35rem;
+            font-family: Georgia, serif;
+            font-style: italic;
+            padding-top: 0.4rem;
+        }
+
+        /* Botón de Emergencia Emocional Destacado */
+        .emergency-banner {
+            background: linear-gradient(135deg, #7b60bc 0%, #644e99 100%);
+            border-radius: 2rem;
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            box-shadow: 0 15px 35px rgba(100, 78, 153, 0.25);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        .emergency-btn {
+            background: #ffffff;
+            color: var(--lavender-700);
+            border: none;
+            padding: 0.85rem 1.8rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .emergency-btn:hover {
+            transform: scale(1.05);
+            background: var(--lavender-50);
+        }
+
+        /* Check-in de ánimo suave */
+        .mood-container {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(229, 224, 245, 0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .mood-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--lavender-600);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1rem;
+        }
+
+        .mood-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .mood-btn {
+            background: #ffffff;
+            border: 1px solid var(--lavender-200);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #5c536d;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .mood-btn:hover {
+            background: var(--lavender-100);
+            color: var(--lavender-700);
+            transform: translateY(-1px);
+        }
+
+        #mood-response {
+            font-size: 0.9rem;
+            color: var(--lavender-700);
+            font-style: italic;
+            font-family: Georgia, serif;
+            min-height: 1.5rem;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+            margin-top: 0.5rem;
+        }
+
+        /* Respiración Guiada */
+        .breathing-container {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(229, 224, 245, 0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .circle-wrapper {
+            position: relative;
+            width: 14rem;
+            height: 14rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes breatheAnimation {
+            0%, 100% { transform: scale(1); background-color: rgba(180, 163, 226, 0.18); box-shadow: 0 0 25px rgba(180, 163, 226, 0.25); }
+            35%, 65% { transform: scale(1.35); background-color: rgba(149, 124, 212, 0.4); box-shadow: 0 0 50px rgba(149, 124, 212, 0.45); }
+        }
+
+        .breathing-circle {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            animation: breatheAnimation 12s infinite ease-in-out;
+        }
+
+        .circle-inner {
+            position: absolute;
+            inset: 1.25rem;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            text-align: center;
+            z-index: 10;
+            border: 1px solid var(--lavender-100);
+        }
+
+        #breath-instruction { font-size: 1.1rem; font-weight: 700; color: var(--lavender-700); transition: opacity 0.3s ease; }
+        #breath-timer { font-size: 2.75rem; font-weight: 800; color: #4a4259; margin-top: 0.25rem; }
+        .timer-unit { font-size: 0.75rem; color: #8c829e; margin-top: 0.1rem; font-weight: 500; }
+
+        .breathing-caption {
+            font-size: 0.75rem;
+            color: #6e6480;
+            margin-top: 1.25rem;
+            background: var(--lavender-50);
+            padding: 0.4rem 1.1rem;
+            border-radius: 9999px;
+            border: 1px solid var(--lavender-100);
+            font-weight: 600;
+        }
+
+        /* Sección Recordatorios */
+        .section-header {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        @media(min-width: 640px) {
+            .section-header { flex-direction: row; align-items: center; justify-content: space-between; }
+        }
+
+        h2 { font-size: 1.8rem; font-weight: 700; color: #2b233c; }
+        .section-subtitle { font-size: 0.9rem; color: #6e6480; margin-top: 0.3rem; }
+
+        .btn-primary {
+            padding: 0.75rem 1.4rem;
+            background: var(--lavender-500);
+            color: #ffffff;
+            font-weight: 600;
+            border-radius: 1.2rem;
+            box-shadow: 0 6px 18px rgba(149, 124, 212, 0.35);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            transition: all 0.25s ease;
+        }
+        .btn-primary:hover { background: var(--lavender-600); transform: translateY(-1px); }
+
+        .reminder-box {
+            background: linear-gradient(135deg, #ffffff 0%, rgba(249, 248, 253, 0.8) 100%);
+            border: 1px solid rgba(229, 224, 245, 0.9);
+            border-radius: 2rem;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.02);
+        }
+
+        .blur-blob-1 { position: absolute; top: -3.5rem; right: -3.5rem; width: 10rem; height: 10rem; background: rgba(229, 224, 245, 0.5); border-radius: 50%; filter: blur(28px); pointer-events: none; }
+        .blur-blob-2 { position: absolute; bottom: -3.5rem; left: -3.5rem; width: 10rem; height: 10rem; background: var(--warmbeige); border-radius: 50%; filter: blur(28px); pointer-events: none; }
+
+        #reminder-text {
+            font-size: 1.45rem;
+            color: #433b52;
+            font-family: Georgia, serif;
+            font-style: italic;
+            position: relative;
+            z-index: 10;
+            line-height: 1.65;
+            transition: opacity 0.25s ease;
+            min-height: 4.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .reminder-tag {
+            margin-top: 1.5rem;
+            display: inline-block;
+            padding: 0.3rem 0.9rem;
+            background: #ffffff;
+            color: var(--lavender-600);
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            border: 1px solid var(--lavender-200);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+
+        /* Cosas que tal vez olvides */
+        .forget-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .forget-card {
+            background: rgba(249, 248, 253, 0.8);
+            border: 1px solid var(--lavender-200);
+            padding: 1.2rem;
+            border-radius: 1.5rem;
+            font-size: 0.9rem;
+            color: #5c536d;
+            font-weight: 600;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 5rem;
+        }
+
+        /* Lo que admiro de ti (Tarjetas interactivas) */
+        .admit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+        .admit-card {
+            background: white;
+            border: 1px solid var(--lavender-200);
+            padding: 1.5rem;
+            border-radius: 1.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            text-align: left;
+        }
+        .admit-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--lavender-400);
+            box-shadow: 0 10px 25px rgba(123, 96, 188, 0.1);
+        }
+
+        /* Biblioteca de cartas (Estantería) */
+        .library-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .book-card {
+            background: linear-gradient(135deg, #f3f0fa 0%, #e5e0f5 100%);
+            border: 1px solid var(--lavender-300);
+            padding: 1.2rem;
+            border-radius: 1.2rem;
+            cursor: pointer;
+            text-align: center;
+            font-weight: 700;
+            color: var(--lavender-700);
+            transition: all 0.3s ease;
+        }
+        .book-card:hover {
+            background: var(--lavender-500);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Jardín virtual (Planta) */
+        .garden-box {
+            text-align: center;
+            background: linear-gradient(135deg, #f7f9f6 0%, #edf2ec 100%);
+            border: 1px solid #c8d7c5;
+            border-radius: 2rem;
+            padding: 2rem;
+        }
+        .plant-emoji {
+            font-size: 3.5rem;
+            margin: 0.5rem 0;
+            animation: sway 3s infinite ease-in-out alternate;
+        }
+        @keyframes sway {
+            0% { transform: rotate(-3deg); }
+            100% { transform: rotate(3deg); }
+        }
+
+        /* Tarro de preocupaciones */
+        .jar-box {
+            background: white;
+            border: 1px solid var(--lavender-200);
+            border-radius: 2rem;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Cielo nocturno (Estrellas mágicas) */
+        .sky-box {
+            background: #1e1b2e;
+            color: white;
+            border-radius: 2rem;
+            padding: 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(30, 27, 46, 0.3);
+        }
+        .sky-stars-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .sky-star-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffeb3b;
+            padding: 0.8rem 1.2rem;
+            border-radius: 9999px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+        .sky-star-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.1);
+        }
+
+        /* Asistente de Autocuidado */
+        .care-checklist {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+        .care-item {
+            background: white;
+            border: 1px solid var(--lavender-200);
+            padding: 0.9rem;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #5c536d;
+            transition: all 0.2s ease;
+        }
+        .care-item.completed {
+            background: var(--lavender-100);
+            border-color: var(--lavender-400);
+            color: var(--lavender-700);
+            text-decoration: line-through;
+        }
+
+        /* Sección Autocuidado Dinámica (Tarjetas de Té, Vela, Música, Descanso, Escritura) */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+        }
+        @media(min-width: 640px) {
+            .cards-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        .card-item {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(235, 228, 245, 0.9);
+            border-radius: 1.8rem;
+            padding: 1.6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card-full { grid-column: 1 / -1; }
+        .border-lavender { border-left: 5px solid var(--lavender-400); }
+        .border-amber { border-left: 5px solid #f6ad55; }
+        .border-blue { border-left: 5px solid #63b3ed; }
+        .border-lavender-dark { border-left: 5px solid var(--lavender-500); }
+        .border-olive { border-left: 5px solid var(--oliveaccent); }
+
+        .card-content-top { display: flex; align-items: flex-start; gap: 1.1rem; }
+        .card-icon {
+            width: 3.2rem;
+            height: 3.2rem;
+            border-radius: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        .glass-card-hover:hover .card-icon { transform: scale(1.12); }
+        .bg-lavender-light { background: var(--lavender-100); color: var(--lavender-700); }
+        .bg-amber-light { background: #feebc8; color: #9c4221; }
+        .bg-blue-light { background: #ebf8ff; color: #2b6cb0; }
+        .bg-olive-light { background: #edf2ec; color: var(--oliveaccent); }
+
+        .card-title { font-size: 1.05rem; font-weight: 700; color: #2b233c; margin-bottom: 0.3rem; }
+        .card-desc { font-size: 0.875rem; color: #6e6480; line-height: 1.55; }
+        .card-footer {
+            margin-top: 1.2rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid rgba(243, 240, 250, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .text-lavender-action { color: var(--lavender-600); }
+        .text-amber-action { color: #c05621; }
+        .text-blue-action { color: #3182ce; }
+        .text-olive-action { color: var(--oliveaccent); }
+
+        /* Bloques Extra de Apapacho (Sobres) */
+        .extra-box {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--lavender-200);
+            border-radius: 2rem;
+            padding: 2.2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(123, 96, 188, 0.06);
+        }
+        .envelope-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+        .envelope-btn {
+            background: var(--lavender-50);
+            border: 1px solid var(--lavender-200);
+            padding: 1rem;
+            border-radius: 1.2rem;
+            font-weight: 600;
+            color: var(--lavender-700);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .envelope-btn:hover {
+            background: var(--lavender-500);
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(149, 124, 212, 0.3);
+        }
+
+        /* Footer / Alma de la página */
+        footer {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 3rem 1rem;
+            font-size: 0.85rem;
+            color: #6e6480;
+            border-top: 1px solid rgba(229, 224, 245, 0.6);
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(8px);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+        .soul-box {
+            max-width: 36rem;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-style: italic;
+            font-family: Georgia, serif;
+            color: var(--lavender-700);
+        }
+
+        /* Modal Dinámico Universal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background: rgba(30, 27, 46, 0.45);
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .modal-overlay.active { opacity: 1; pointer-events: auto; }
+
+        .modal-box {
+            background: #ffffff;
+            border-radius: 2.2rem;
+            max-width: 30rem;
+            width: 100%;
+            padding: 2.5rem;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+            transform: scale(0.92);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            border: 1px solid var(--lavender-100);
+            text-align: center;
+        }
+        .modal-overlay.active .modal-box { transform: scale(1); }
+
+        .modal-close {
+            position: absolute;
+            top: 1.1rem;
+            right: 1.1rem;
+            width: 2.2rem;
+            height: 2.2rem;
+            border-radius: 50%;
+            background: #f3f0fa;
+            border: none;
+            color: #6e6480;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+        .modal-close:hover { background: var(--lavender-200); }
+    </style>
+</head>
+<body>
+
+    <!-- Fondo dinámico de estrellas -->
+    <div id="stars-container" style="position: absolute; inset: 0; overflow: hidden; z-index: 0;"></div>
+
+    <!-- Controles superiores (Música y Botón Secreto) -->
+    <div class="top-controls">
+        <button id="music-toggle" onclick="toggleAudio()" class="control-btn">
+            <span id="music-icon">🎵</span>
+            <span id="music-text">Calma</span>
+        </button>
+        <button onclick="openSecretModal()" class="control-btn" style="background: var(--lavender-500); color: white; border: none;">
+            ✨ Secreto
+        </button>
+    </div>
+
+    <!-- Contenido Principal -->
+    <main>
+        <!-- 1. INICIO: BIENVENIDA A CASA -->
+        <section class="glass-card welcome-section">
+            <div class="badge"><span>🌿</span> Tu propio santuario de paz</div>
+            <h1>Bienvenida a casa, Claudia <span class="pulse-heart">💜</span></h1>
+            <div class="welcome-text">
+                <p>Antes de hacer cualquier otra cosa, respira.</p>
+                <p>No tienes que terminar todo hoy.</p>
+                <p>No tienes que demostrarle nada a nadie en este momento.</p>
+                <p>No tienes que ser fuerte todo el tiempo.</p>
+                <p class="final-rest">Solo date el permiso de descansar.</p>
+            </div>
+
+            <!-- Botón de Emergencia Emocional -->
+            <div style="margin-top: 2.2rem;">
+                <div class="emergency-banner">
+                    <h3 style="font-family: Georgia, serif; font-size: 1.25rem;">¿Tuviste un día pesado?</h3>
+                    <button onclick="triggerEmergency()" class="emergency-btn">💜 Hoy necesito que alguien me recuerde algo bonito</button>
+                </div>
+            </div>
+
+            <!-- Check-in de ánimo suave -->
+            <div class="mood-container">
+                <span class="mood-title">¿Cómo se siente tu corazoncito hoy?</span>
+                <div class="mood-buttons">
+                    <button class="mood-btn" onclick="setMood('cansada')">😴 Cansada</button>
+                    <button class="mood-btn" onclick="setMood('abrumada')">🌪️ Abrumada</button>
+                    <button class="mood-btn" onclick="setMood('tranquila')">☕ Tranquila</button>
+                    <button class="mood-btn" onclick="setMood('fuerte')">✨ Buscando fuerza</button>
+                </div>
+                <div id="mood-response"></div>
+            </div>
+
+            <!-- Respiración Guiada -->
+            <div class="breathing-container">
+                <h3 class="mood-title" style="margin-bottom: 1.2rem;">Pausa y acompaña tu respiración</h3>
+                <div class="circle-wrapper">
+                    <div class="breathing-circle"></div>
+                    <div class="circle-inner">
+                        <span id="breath-instruction">Inhala con calma...</span>
+                        <span id="breath-timer">4</span>
+                        <span class="timer-unit">segundos</span>
+                    </div>
+                </div>
+                <div class="breathing-caption">Sigue el ciclo: Inhala (4s) • Mantén (4s) • Exhala (4s)</div>
+            </div>
+        </section>
+
+        <!-- 2. ASISTENTE SUAVE DE AUTOCUIDADO -->
+        <section class="glass-card">
+            <h2 style="font-size: 1.6rem; color: #2b233c; margin-bottom: 0.4rem;">¿Ya te tomaste un momento para ti?</h2>
+            <p style="font-size: 0.88rem; color: #6e6480; margin-bottom: 1rem;">Cuando estamos estresadas, olvidamos lo básico. Toca lo que ya hiciste hoy:</p>
+            <div class="care-checklist">
+                <div class="care-item" onclick="toggleCare(this)">💧 ¿Ya tomaste agua?</div>
+                <div class="care-item" onclick="toggleCare(this)">🍎 ¿Ya comiste algo rico?</div>
+                <div class="care-item" onclick="toggleCare(this)">😴 ¿Diste un respiro profundo?</div>
+                <div class="care-item" onclick="toggleCare(this)">🌿 ¿Soltaste los hombros?</div>
+            </div>
+            <div id="care-message" style="margin-top: 1rem; font-family: Georgia, serif; font-style: italic; color: var(--lavender-700); font-size: 0.95rem; text-align: center; min-height: 1.5rem;"></div>
+        </section>
+
+        <!-- 3. COSAS QUE TAL VEZ OLVIDES -->
+        <section class="glass-card">
+            <h2 style="font-size: 1.6rem; color: #2b233c; margin-bottom: 0.4rem;">Cosas que tal vez olvides</h2>
+            <p style="font-size: 0.88rem; color: #6e6480;">Recuerditos suaves para cuando la mente se pone exigente:</p>
+            <div class="forget-grid">
+                <div class="forget-card">A veces eres muy dura contigo misma.</div>
+                <div class="forget-card">A veces piensas demasiado las cosas.</div>
+                <div class="forget-card">A veces cargas más de lo que deberías.</div>
+                <div class="forget-card">A veces te preocupas por todos antes que por ti.</div>
+                <div class="forget-card" style="background: var(--lavender-100); color: var(--lavender-700);">Y a veces olvidas que tú también mereces cuidado.</div>
+            </div>
+        </section>
+
+        <!-- 4. LO QUE ADMIRO DE TI -->
+        <section class="glass-card">
+            <h2 style="font-size: 1.6rem; color: #2b233c; margin-bottom: 0.4rem;">Lo que admiro de ti</h2>
+            <p style="font-size: 0.88rem; color: #6e6480;">Haz clic en cada tarjeta para leer por qué eres tan especial:</p>
+            <div class="admit-grid">
+                <div class="admit-card" onclick="openAdmitModal('Tu forma de seguir adelante aunque estés cansada')">
+                    <h3 style="font-size: 1rem; color: #2b233c; margin-bottom: 0.3rem;">✨ Tu perseverancia</h3>
+                    <p style="font-size: 0.825rem; color: #6e6480;">Tu forma de seguir adelante aunque estés cansada.</p>
+                </div>
+                <div class="admit-card" onclick="openAdmitModal('Lo responsable y dedicada que eres en todo lo que emprendes')">
+                    <h3 style="font-size: 1rem; color: #2b233c; margin-bottom: 0.3rem;">📚 Tu gran responsabilidad</h3>
+                    <p style="font-size: 0.825rem; color: #6e6480;">Lo responsable que eres.</p>
+                </div>
+                <div class="admit-card" onclick="openAdmitModal('El empeño genuino que pones en cada meta y en cada reto')">
+                    <h3 style="font-size: 1rem; color: #2b233c; margin-bottom: 0.3rem;">💪 Tu esfuerzo diario</h3>
+                    <p style="font-size: 0.825rem; color: #6e6480;">Lo mucho que te esfuerzas.</p>
+                </div>
+                <div class="admit-card" onclick="openAdmitModal('La bondad con la que cuidas y te importan las personas que quieres')">
+                    <h3 style="font-size: 1rem; color: #2b233c; margin-bottom: 0.3rem;">💜 Tu gran corazón</h3>
+                    <p style="font-size: 0.825rem; color: #6e6480;">Lo mucho que te importa la gente que quieres.</p>
+                </div>
+                <div class="admit-card" onclick="openAdmitModal('La chispa única de creatividad y talento que hay en tu mente')">
+                    <h3 style="font-size: 1rem; color: #2b233c; margin-bottom: 0.3rem;">🎨 Tu creatividad</h3>
+                    <p style="font-size: 0.825rem; color: #6e6480;">Tu creatividad.</p>
+                </div>
+                <div class="admit-card" onclick="openAdmitModal('La atención y la paz que transmites cuando escuchas a los demás')">
+                    <h3 style="font-size: 1rem; color: #2b233c; margin-bottom: 0.3rem;">🎧 Tu empatía</h3>
+                    <p style="font-size: 0.825rem; color: #6e6480;">Tu forma de escuchar.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SECCIÓN RECORDATORIOS (CON 50 FRASES) -->
+        <section class="glass-card">
+            <div class="section-header">
+                <div>
+                    <h2>Lo que quiero que recuerdes</h2>
+                    <p class="section-subtitle">Palabras sinceras escritas solo para ti, para leer cuantas veces lo necesites.</p>
+                </div>
+                <button onclick="getRandomReminder()" class="btn-primary"><span>✨</span> Siguiente recordatorio</button>
+            </div>
+            <div class="reminder-box">
+                <div class="blur-blob-1"></div>
+                <div class="blur-blob-2"></div>
+                <p id="reminder-text">"Cargando mensaje..."</p>
+                <div class="reminder-tag">Para ti, Claudia 💜</div>
+            </div>
+        </section>
+
+        <!-- 6. SI HOY FUE UN DÍA DIFÍCIL -->
+        <section style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div style="padding-left: 0.5rem;">
+                <h2>Si hoy fue un día difícil</h2>
+                <p class="section-subtitle">Haz clic en cada tarjeta para activar su experiencia interactiva de calma.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div onclick="openActivityModal('tea')" class="card-item glass-card-hover border-lavender">
+                    <div class="card-content-top">
+                        <div class="card-icon bg-lavender-light">☕</div>
+                        <div>
+                            <h3 class="card-title">Preparar una taza de té caliente</h3>
+                            <p class="card-desc">Inicia una pausa guiada de 5 minutos sin mirar el celular.</p>
+                        </div>
+                    </div>
+                    <div class="card-footer text-lavender-action"><span>Iniciar temporizador</span><span>→</span></div>
+                </div>
+
+                <div onclick="openActivityModal('candle')" class="card-item glass-card-hover border-amber">
+                    <div class="card-content-top">
+                        <div class="card-icon bg-amber-light">🕯️</div>
+                        <div>
+                            <h3 class="card-title">Encender una luz tenue o vela</h3>
+                            <p class="card-desc">Enciende una vela virtual para iluminar y calmar tu espacio.</p>
+                        </div>
+                    </div>
+                    <div class="card-footer text-amber-action"><span>Encender vela virtual</span><span>→</span></div>
+                </div>
+
+                <div onclick="openActivityModal('audio')" class="card-item glass-card-hover border-blue">
+                    <div class="card-content-top">
+                        <div class="card-icon bg-blue-light">🎧</div>
+                        <div>
+                            <h3 class="card-title">Escuchar una melodía de paz</h3>
+                            <p class="card-desc">Elige un fondo sonoro relajante para desconectar de los pendientes.</p>
+                        </div>
+                    </div>
+                    <div class="card-footer text-blue-action"><span>Abrir panel de sonido</span><span>→</span></div>
+                </div>
+
+                <div onclick="openActivityModal('rest')" class="card-item glass-card-hover border-lavender-dark">
+                    <div class="card-content-top">
+                        <div class="card-icon bg-lavender-light">🛌</div>
+                        <div>
+                            <h3 class="card-title">Acostarse y cerrar los ojos sin culpa</h3>
+                            <p class="card-desc">Activa una mini-pausa de 3 minutos para soltar el control y descansar.</p>
+                        </div>
+                    </div>
+                    <div class="card-footer text-lavender-action"><span>Iniciar descanso guiado</span><span>→</span></div>
+                </div>
+
+                <div onclick="openActivityModal('write')" class="card-item card-full glass-card-hover border-olive">
+                    <div class="card-content-top">
+                        <div class="card-icon bg-olive-light">✍️</div>
+                        <div>
+                            <h3 class="card-title">Escribir lo que sientes solo para sacarlo de tu mente</h3>
+                            <p class="card-desc">Usa este bloc personal para vaciar el estrés y borrarlo simbólicamente.</p>
+                        </div>
+                    </div>
+                    <div class="card-footer text-olive-action"><span>Abrir bloc de desahogo</span><span>→</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. BIBLIOTECA DE CARTAS -->
+        <section class="glass-card">
+            <h2 style="font-size: 1.6rem; color: #2b233c; margin-bottom: 0.4rem;">📖 Biblioteca de cartas</h2>
+            <p style="font-size: 0.88rem; color: #6e6480;">Elige una carta según el momento que estés viviendo hoy:</p>
+            <div class="library-grid">
+                <div class="book-card" onclick="openLetter('cansada')">💤 Carta para cuando estés cansada</div>
+                <div class="book-card" onclick="openLetter('mal')">🌧️ Carta para cuando algo salió mal</div>
+                <div class="book-card" onclick="openLetter('miedo')">🕯️ Carta para cuando tengas miedo</div>
+                <div class="book-card" onclick="openLetter('sola')">🌿 Carta para cuando te sientas sola</div>
+                <div class="book-card" onclick="openLetter('celebrar')">✨ Carta para celebrar algo bonito</div>
+                <div class="book-card" onclick="openLetter('dormir')">🌙 Carta para leer antes de dormir</div>
+            </div>
+        </section>
+
+        <!-- 8. JARDÍN VIRTUAL -->
+        <section class="garden-box">
+            <h2 style="font-size: 1.5rem; color: #2f3e2e; margin-bottom: 0.3rem;">🌿 Tu jardín virtual</h2>
+            <p style="font-size: 0.85rem; color: #556b53; margin-bottom: 1rem;">Cada vez que visitas este espacio, tu plantita crece un poquito.</p>
+            <div id="plant-display" class="plant-emoji">🌱</div>
+            <div id="plant-message" style="font-family: Georgia, serif; font-style: italic; color: #3b4e39; font-size: 0.95rem; margin-top: 0.5rem;"></div>
+        </section>
+
+        <!-- 9. TARRO DE PREOCUPACIONES -->
+        <section class="jar-box">
+            <h2 style="font-size: 1.6rem; color: #2b233c; margin-bottom: 0.4rem;">☁️ Tarro de preocupaciones ("Deja esto aquí")</h2>
+            <p style="font-size: 0.88rem; color: #6e6480; margin-bottom: 1.2rem;">Escribe lo que te pesa hoy. Al guardarlo, déjalo ir:</p>
+            <textarea id="worry-input" placeholder="Ej. Hoy estoy muy cansada o tengo miedo del examen..." style="width: 100%; height: 90px; padding: 0.8rem; border-radius: 1rem; border: 1px solid var(--lavender-200); font-family: inherit; font-size: 0.9rem; resize: none; margin-bottom: 1rem;"></textarea>
+            <button onclick="saveWorry()" class="btn-primary">Guardar y soltar peso ☁️</button>
+            <div id="worry-feedback" style="margin-top: 1rem; font-family: Georgia, serif; font-style: italic; color: var(--lavender-700); font-size: 0.95rem;"></div>
+        </section>
+
+        <!-- 10. EL CIELO NOCTURNO -->
+        <section class="sky-box">
+            <h2 style="font-size: 1.6rem; color: #ffffff; font-family: Georgia, serif; margin-bottom: 0.4rem;">⭐ Mira el cielo un momento</h2>
+            <p style="font-size: 0.88rem; color: #d0c9e8;">Toca una estrella para descubrir su mensaje:</p>
+            <div class="sky-stars-grid">
+                <button class="sky-star-btn" onclick="openSkyMessage('Estoy orgulloso de ti, Claudia. Haces un trabajo extraordinario.')">⭐ Estrella 1</button>
+                <button class="sky-star-btn" onclick="openSkyMessage('Descansa. El mundo puede girar un rato sin que cargues con él.')">⭐ Estrella 2</button>
+                <button class="sky-star-btn" onclick="openSkyMessage('Mañana será otro día y las cosas se verán con más claridad.')">⭐ Estrella 3</button>
+                <button class="sky-star-btn" onclick="openSkyMessage('No tienes que hacerlo todo hoy. Ve a tu propio ritmo.')">⭐ Estrella 4</button>
+            </div>
+        </section>
+
+        <!-- 11. SOBRES DE APAPACHO -->
+        <section class="extra-box">
+            <h3 style="font-family: Georgia, serif; font-size: 1.5rem; color: #2b233c; margin-bottom: 0.4rem;">💌 Sobres de Apoyo Incondicional</h3>
+            <p style="font-size: 0.88rem; color: #6e6480; margin-bottom: 1rem;">Toca un sobre cuando necesites sentir un apapacho calientito en el corazón.</p>
+            <div class="envelope-grid">
+                <button class="envelope-btn" onclick="openEnvelope(1)"><span>✉️ Sobre 1</span><span style="font-size: 0.75rem; font-weight: 500; opacity: 0.8;">Cuando dudes de ti</span></button>
+                <button class="envelope-btn" onclick="openEnvelope(2)"><span>✉️ Sobre 2</span><span style="font-size: 0.75rem; font-weight: 500; opacity: 0.8;">Para días muy pesados</span></button>
+                <button class="envelope-btn" onclick="openEnvelope(3)"><span>✉️ Sobre 3</span><span style="font-size: 0.75rem; font-weight: 500; opacity: 0.8;">Un recordatorio extra</span></button>
+            </div>
+        </section>
+
+        <!-- 12. CÁPSULA DEL TIEMPO -->
+        <section class="glass-card" style="text-align: center;">
+            <h2 style="font-size: 1.6rem; color: #2b233c; margin-bottom: 0.4rem;">🕰️ Cápsula del tiempo para el futuro</h2>
+            <p style="font-size: 0.88rem; color: #6e6480; margin-bottom: 1.2rem;">Una carta escrita para cuando mires atrás dentro de un año:</p>
+            <button onclick="openTimeCapsule()" class="btn-primary">Abrir carta para mi futuro 💌</button>
+        </section>
+    </main>
+
+    <!-- Footer / El alma de la página -->
+    <footer>
+        <div class="soul-box">
+            <p><strong>¿Por qué existe este lugar?</strong></p>
+            <p>Porque hay días muy pesados. Porque a veces te olvidas de descansar. Porque a veces te exiges demasiado. Porque mereces un lugar donde no tengas que demostrar nada. Y porque eres una persona sumamente importante.</p>
+        </div>
+        <p>Hecho con todo el afecto y cuidado para Claudia 💜 • Tu espacio seguro diario</p>
+    </footer>
+
+    <!-- Modales -->
+    <div id="universal-modal" class="modal-overlay" onclick="closeModalOutside(event)">
+        <div class="modal-box">
+            <button onclick="closeModal()" class="modal-close">✕</button>
+            <div id="modal-icon" style="font-size: 2.5rem; margin-bottom: 0.8rem;">🌿</div>
+            <h3 id="modal-title" style="font-size: 1.35rem; font-weight: 700; color: #2b233c; margin-bottom: 0.8rem; font-family: Georgia, serif;">Título</h3>
+            <div id="modal-body" style="color: #5c536d; font-size: 0.95rem; line-height: 1.7; background: rgba(249, 248, 253, 0.8); padding: 1.2rem; border-radius: 1.2rem; border: 1px solid var(--lavender-100); font-family: Georgia, serif; font-style: italic;"></div>
+            <div style="margin-top: 1.5rem;">
+                <button onclick="closeModal()" class="btn-primary" style="width: 100%; justify-content: center;">Cerrar con calma 💜</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="activity-modal" class="modal-overlay" onclick="closeActivityModalOutside(event)">
+        <div class="modal-box">
+            <button onclick="closeActivityModal()" class="modal-close">✕</button>
+            <div id="activity-icon" style="font-size: 2.5rem; margin-bottom: 0.8rem;">🌿</div>
+            <h3 id="activity-title" style="font-size: 1.35rem; font-weight: 700; color: #2b233c; margin-bottom: 0.8rem; font-family: Georgia, serif;">Sugerencia</h3>
+            <div id="activity-body-content"></div>
+        </div>
+    </div>
+
+    <script>
+        function createStars() {
+            const container = document.getElementById('stars-container');
+            for (let i = 0; i < 40; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                const size = (Math.random() * 3 + 2) + 'px';
+                star.style.width = size; star.style.height = size;
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = (Math.random() * 100 + 100) + 'vh';
+                star.style.animationDuration = (Math.random() * 14 + 10) + 's';
+                star.style.animationDelay = (Math.random() * 8) + 's';
+                container.appendChild(star);
+            }
+        }
+
+        // Banco con 50 frases amorosas y reconfortantes
+        const reminders = [
+            "Está bien estar cansada.", "Está bien tomar pausas.",
+            "Tu valor no depende de tus calificaciones ni de lo productiva que seas.",
+            "Descansar no te hace menos responsable; te hace humana.",
+            "No tienes que resolver toda tu vida hoy. Un pasito a la vez.",
+            "Mereces la misma paciencia y cariño que siempre ofreces a los demás.",
+            "Aunque hoy haya sido un día difícil, sigues aquí y eso es de valientes.",
+            "No tienes que cargar con todo sola. Está bien pedir un abrazo o un respiro.",
+            "Hay personas que se preocupan genuinamente por ti (y uy, cómo vales la pena).",
+            "Tu bienestar importa muchísimo más que cualquier tarea pendiente.",
+            "Tu luz no necesita hacer ruido para ser hermosa. Lo estás haciendo muy bien.",
+            "Date el permiso de apagar la mente y el celular por un ratito.",
+            "No pasa nada si hoy no lograste todo lo que planeaste.",
+            "Eres mucho más fuerte de lo que crees, pero también tienes derecho a flaquear.",
+            "Respira hondo. Ya hiciste suficiente por hoy.",
+            "Que hoy la vida te sorprenda con un momento de paz inesperada.",
+            "No hay prisa. Todo lo bueno toma su propio tiempo para florecer.",
+            "Eres un ser humano maravilloso, no una máquina de producir.",
+            "Date un abrazo fuerte de mi parte; te lo has ganado.",
+            "Tu sonrisa ilumina los días de quienes tenemos la suerte de conocerte.",
+            "Está bien no tener todas las respuestas en este momento.",
+            "Cada pequeño esfuerzo cuenta, incluso cuando sientes que nadie lo nota.",
+            "Tu sensibilidad no es debilidad; es la forma en que tu alma siente bonito el mundo.",
+            "Permítete soltar el control por un instante. El universo no se va a caer.",
+            "Eres suficiente exactamente tal como eres hoy.",
+            "A veces el acto de amor más grande es simplemente irte a dormir temprano.",
+            "No olvides lo lejos que has llegado y todo lo que ya has superado.",
+            "Tu paz mental vale mucho más que cualquier discusión o pendiente.",
+            "Rodéate de gentileza, especialmente en la forma en que tehablas a ti misma.",
+            "El mundo es un lugar un poco más bonito simplemente porque tú estás en él.",
+            "Inhala calma, exhala cualquier expectativa pesada.",
+            "No tienes que demostrarle nada a nadie para ser valiosa.",
+            "Eres dueña de tu tiempo, de tu espacio y de tu tranquilidad.",
+            "Acepta tus días grises; las flores también necesitan de la lluvia para crecer.",
+            "Te mereces un descanso profundo, sin culpa y sin interrupciones.",
+            "Tu corazón es noble y hermoso, cuídalo mucho.",
+            "Hoy date permiso de hacer las cosas lento o de no hacer nada en absoluto.",
+            "Hay un refugio dentro de ti al que siempre puedes volver cuando te sientas abrumada.",
+            "Tus sueños son importantes, pero tu salud mental lo es aún más.",
+            "Que nada ni nadie roben la paz que con tanto esfuerzo has construido.",
+            "Eres increíblemente resiliente, pero hoy te toca descansar.",
+            "Regálate un respiro hondo y deja que los hombros bajen.",
+            "Tu presencia es un regalo muy bonito para las personas que te queremos.",
+            "No te compares con nadie; tu camino es único y maravilloso.",
+            "Está bien llorar, está bien reír, está bien simplemente sentir.",
+            "Confía en tu intuición y en la fuerza silenciosa que vive en ti.",
+            "Hoy te mereces un apapacho al alma y una taza de tu bebida favorita.",
+            "Eres mucho más que tus pendientes escolares o tus tareas del día.",
+            "Recuerda que siempre habrá alguien dispuesto a escucharte sin juzgar.",
+            "Pase lo que pase, hoy hiciste tu mejor esfuerzo y eso es suficiente."
+        ];
+
+        let lastReminderIndex = -1;
+        function getRandomReminder() {
+            let randomIndex;
+            do { randomIndex = Math.floor(Math.random() * reminders.length); } while (randomIndex === lastReminderIndex && reminders.length > 1);
+            lastReminderIndex = randomIndex;
+            const reminderElement = document.getElementById('reminder-text');
+            reminderElement.style.opacity = 0;
+            setTimeout(() => { reminderElement.textContent = `"${reminders[randomIndex]}"`; reminderElement.style.opacity = 1; }, 200);
+        }
+
+        function setMood(mood) {
+            const respEl = document.getElementById('mood-response');
+            let text = "";
+            switch(mood) {
+                case 'cansada': text = "💜 Es completamente normal. Cierra los ojitos un momento, te mereces un descanso profundo."; break;
+                case 'abrumada': text = "🌿 Suelta todo lo que llevas en la cabeza por un segundo. No tienes que resolverlo ahorita."; break;
+                case 'tranquila': text = "☕ Qué alegría leer eso. Disfruta de esta calma y quédate en este estado el tiempo que quieras."; break;
+                case 'fuerte': text = "✨ Admiro muchísimo tu valentía, Claudia. Pero recuerda que también puedes descansar cuando lo necesites."; break;
+            }
+            respEl.style.opacity = 0;
+            setTimeout(() => { respEl.textContent = text; respEl.style.opacity = 1; }, 150);
+        }
+
+        function updateGarden() {
+            let visits = localStorage.getItem('claudia_garden_visits') || 0;
+            visits = parseInt(visits) + 1;
+            localStorage.setItem('claudia_garden_visits', visits);
+            const plantEl = document.getElementById('plant-display');
+            const msgEl = document.getElementById('plant-message');
+            if (visits === 1) {
+                plantEl.textContent = "🌱";
+                msgEl.textContent = "Tu plantita acaba de nacer en este refugio. Igual que tú: a veces despacio, pero siempre creciendo.";
+            } else if (visits <= 3) {
+                plantEl.textContent = "🌿";
+                msgEl.textContent = "Tu plantita tiene hojitas nuevas. Gracias por volver a cuidarte y darte este espacio.";
+            } else {
+                plantEl.textContent = "🌸🌳";
+                msgEl.textContent = "Mira qué hermosa está creciendo tu plantita con cada visita. Eres constancia, fuerza y belleza.";
+            }
+        }
+
+        function toggleCare(el) {
+            el.classList.toggle('completed');
+            const msg = document.getElementById('care-message');
+            const completedCount = document.querySelectorAll('.care-item.completed').length;
+            if (completedCount === 4) {
+                msg.textContent = "✨ ¡Lo lograste! Estoy orgulloso de ti. Hoy te cuidaste un poquito más.";
+            } else {
+                msg.textContent = "Vas muy bien. Tómate el tiempo que necesites.";
+            }
+        }
+
+        function showModal(icon, title, text) {
+            document.getElementById('modal-icon').textContent = icon;
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-body').textContent = `"${text}"`;
+            document.getElementById('universal-modal').classList.add('active');
+        }
+        function closeModal() { document.getElementById('universal-modal').classList.remove('active'); }
+        function closeModalOutside(e) { if (e.target.id === 'universal-modal') closeModal(); }
+
+        function openAdmitModal(desc) { showModal("✨", "A veces no te das cuenta de esto, pero...", desc); }
+
+        const letters = {
+            cansada: "Si hoy estás muy cansada, suelta las expectativas. No tienes que demostrarle nada a nadie. Recuéstate, cierra los ojos y permite que tu cuerpo se recupere sin culpa.",
+            mal: "Habrá días en los que las cosas no salgan como esperabas, y está bien sentirse frustrada. Un mal día no borra lo capaz, inteligente y valiosa que eres.",
+            miedo: "El miedo solo significa que te importa lo que haces. Pero respira: no estás sola con tus retos, y tienes una fortaleza enorme que ya ha superado mucho antes.",
+            sola: "Aunque a veces sientas que cargas todo tú sola, recuerda que hay personas que te queremos profundamente y que tu bienestar nos importa muchísimo.",
+            celebrar: "¡Qué alegría cuando las cosas fluyen! Tómate un momento para sonreír, reconocer tu esfuerzo y disfrutar de este instante bonito sin reservas.",
+            dormir: "Ya hiciste suficiente por hoy. Apaga los pendientes de tu cabeza, descansa tu mente y confía en que mañana será un nuevo comienzo. Duerme en paz."
+        };
+        function openLetter(type) {
+            const titles = { cansada: "Carta para cuando estés cansada", mal: "Carta para cuando algo salió mal", miedo: "Carta para cuando tengas miedo", sola: "Carta para cuando te sientas sola", celebrar: "Carta para celebrar algo bonito", dormir: "Carta para leer antes de dormir" };
+            showModal("📖", titles[type], letters[type]);
+        }
+
+        function saveWorry() {
+            const input = document.getElementById('worry-input');
+            const feedback = document.getElementById('worry-feedback');
+            if (input.value.trim() !== "") {
+                feedback.textContent = "No voy a juzgarte. Gracias por compartirlo. Ahora puedes dejar هذا peso aquí un momento.";
+                input.value = "";
+                setTimeout(() => { feedback.textContent = ""; }, 6000);
+            } else {
+                feedback.textContent = "Escribe algo si deseas soltarlo, o simplemente descansa.";
+            }
+        }
+
+        function openSkyMessage(msg) { showModal("⭐", "Mensaje del cielo nocturno", msg); }
+
+        const envelopesData = {
+            1: { title: "Cuando dudes de ti 💜", desc: "Recuerda todo lo que has superado para llegar hasta aquí. No necesitas ser perfecta para ser valiosa; tu esfuerzo diario ya es increíble." },
+            2: { title: "Para días muy pesados 🌿", desc: "Suelta los hombros, relaja la mandíbula y date cuenta de que este momento difícil va a pasar. No estás sola con tus cargas." },
+            3: { title: "Un recordatorio extra ✨", desc: "Alguien en este mundo valora tu sonrisa, tu inteligencia y tu presencia más de lo que imaginas. Eres un regalo para quienes te rodeamos." }
+        };
+        function openEnvelope(id) {
+            const data = envelopesData[id];
+            showModal("💌", data.title, data.desc);
+        }
+
+        const emergencyPhrases = [
+            "No todo depende de ti. Respira.",
+            "Está bien pedir ayuda cuando sientes que no puedes con todo.",
+            "No tienes que poder con todo hoy.",
+            "Hoy ya hiciste suficiente. Ya ganaste el derecho a descansar.",
+            "Tu mejor esfuerzo de hoy es más que suficiente.",
+            "Mereces la misma comprensión y paciencia que siempre das a los demás."
+        ];
+        function triggerEmergency() {
+            const randomMsg = emergencyPhrases[Math.floor(Math.random() * emergencyPhrases.length)];
+            showModal("💜", "Para ti, en este instante", randomMsg);
+        }
+
+        function openTimeCapsule() {
+            showModal("🕰️", "Carta para tu futuro", "Querida Claudia: Si estás leyendo esto dentro de un tiempo, quiero recordarte que sobreviviste a los días difíciles, que sigues creciendo y que tu esencia maravillosa sigue intacta. Sigue cuidando de ti.");
+        }
+
+        // Mensaje secreto mejorado y sumamente bonito
+        function openSecretModal() {
+            showModal("✨", "Un rincón solo para ti en este día difícil", "Si abriste este secreto, sé que hoy las cosas se sienten pesadas y quizás el mundo pesa un poco más de la cuenta. No te voy a pedir que sonrías ni que intentes verle el lado positivo a todo. Solo quiero recordarte que eres una persona profundamente valiosa, que admiro tu valentía en silencio y que pase lo que pase, cuentas conmigo de forma incondicional. Date el permiso de descansar. Mañana el mundo puede esperar un poco.");
+        }
+
+        const activitiesData = {
+            tea: {
+                icon: "☕", title: "Pausa consciente con tu té",
+                html: `<p style="color: #5c536d; font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.5rem; background: rgba(249, 248, 253, 0.8); padding: 1.1rem; border-radius: 1.2rem; border: 1px solid var(--lavender-100);">Hazte una bebida calientita. Tómate estos minutos sin mirar el celular, sintiendo el calor entre tus manos.</p><div style="font-size: 2.2rem; font-weight: bold; color: var(--lavender-700); margin: 1rem 0;" id="tea-timer">05:00</div><button onclick="startTeaTimer()" id="timer-btn" class="btn-primary" style="width: 100%; justify-content: center;">Iniciar temporizador de calma</button>`
+            },
+            candle: {
+                icon: "🕯️", title: "Encender una vela virtual de paz",
+                html: `<p style="color: #5c536d; font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.5rem; background: rgba(249, 248, 253, 0.8); padding: 1.1rem; border-radius: 1.2rem; border: 1px solid var(--lavender-100);">Toca el botón de abajo para encender la llama. Imagina que su luz cálida limpia cualquier tensión de tu cuarto.</p><div id="candle-flame" style="font-size: 3.5rem; margin: 0.8rem 0; transition: transform 0.3s ease;">🕯️️</div><div id="candle-status" style="font-size: 0.85rem; color: #6e6480; margin-bottom: 1rem;">La vela está apagada</div><button onclick="toggleCandle()" id="candle-btn" class="btn-primary" style="width: 100%; justify-content: center; background: #f6ad55;">Encender luz cálida ✨</button>`
+            },
+            audio: {
+                icon: "🎧", title: "Panel de Melodías de Calma",
+                html: `<p style="color: #5c536d; font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.5rem; background: rgba(249, 248, 253, 0.8); padding: 1.1rem; border-radius: 1.2rem; border: 1px solid var(--lavender-100);">Elige un ambiente sonoro para relajar tu mente al instante con el sintetizador de tu navegador.</p><div style="display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.2rem;"><button onclick="setSoundType(1)" class="mood-btn" style="width:100%; text-align:center;">🎵 Acorde Armónico Suave</button><button onclick="setSoundType(2)" class="mood-btn" style="width:100%; text-align:center;">🌊 Frecuencia de Relajación Profunda</button></div><button onclick="toggleAudio(); closeActivityModal();" class="btn-primary" style="width: 100%; justify-content: center;">Activar/Silenciar Sonido</button>`
+            },
+            rest: {
+                icon: "🛌", title: "Mini-descanso de 3 minutos",
+                html: `<p style="color: #5c536d; font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.5rem; background: rgba(249, 248, 253, 0.8); padding: 1.1rem; border-radius: 1.2rem; border: 1px solid var(--lavender-100);">Cierra tus ojos. Este contador te acompañará mientras sueltas el peso de los pendientes.</p><div style="font-size: 2.2rem; font-weight: bold; color: var(--lavender-700); margin: 1rem 0;" id="rest-timer">03:00</div><button onclick="startRestTimer()" id="rest-btn" class="btn-primary" style="width: 100%; justify-content: center;">Iniciar descanso sin culpa</button>`
+            },
+            write: {
+                icon: "✍️", title: "Bloc de desahogo rápido",
+                html: `<p style="color: #5c536d; font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.5rem; background: rgba(249, 248, 253, 0.8); padding: 1.1rem; border-radius: 1.2rem; border: 1px solid var(--lavender-100);">Escribe lo que te agobia aquí abajo. Al terminar, puedes presionar el botón para borrarlo y liberar tu mente.</p><textarea id="brain-dump" placeholder="Escribe lo que quieras sacar de tu cabeza..." style="width: 100%; height: 90px; padding: 0.8rem; border-radius: 1rem; border: 1px solid var(--lavender-200); font-family: inherit; font-size: 0.9rem; resize: none; margin-bottom: 1rem;"></textarea><button onclick="clearBrainDump()" class="btn-primary" style="width: 100%; justify-content: center; background: var(--oliveaccent);">Soltar y limpiar mente ✨</button>`
+            }
+        };
+
+        function openActivityModal(key) {
+            const data = activitiesData[key];
+            if (!data) return;
+            document.getElementById('activity-icon').textContent = data.icon;
+            document.getElementById('activity-title').textContent = data.title;
+            document.getElementById('activity-body-content').innerHTML = data.html;
+            document.getElementById('activity-modal').classList.add('active');
+        }
+        function closeActivityModal() { document.getElementById('activity-modal').classList.remove('active'); }
+        function closeActivityModalOutside(event) { if (event.target.id === 'activity-modal') closeActivityModal(); }
+
+        function clearBrainDump() {
+            const area = document.getElementById('brain-dump');
+            if (area) { area.value = ""; area.placeholder = "¡Listo! Tus pensamientos han sido liberados 🌿"; setTimeout(() => closeActivityModal(), 1200); }
+        }
+
+        let candleLit = false;
+        function toggleCandle() {
+            candleLit = !candleLit;
+            const flame = document.getElementById('candle-flame');
+            const status = document.getElementById('candle-status');
+            const btn = document.getElementById('candle-btn');
+            if (candleLit) {
+                flame.textContent = "🔥🕯️✨"; flame.style.transform = "scale(1.2)";
+                status.textContent = "La vela ilumina tu espacio con calma...";
+                btn.textContent = "Apagar luz"; btn.style.background = "#957cd4";
+            } else {
+                flame.textContent = "🕯️"; flame.style.transform = "scale(1)";
+                status.textContent = "La vela está apagada";
+                btn.textContent = "Encender luz cálida ✨"; btn.style.background = "#f6ad55";
+            }
+        }
+
+        let teaInterval = null;
+        function startTeaTimer() {
+            let totalSeconds = 300;
+            const timerDisplay = document.getElementById('tea-timer');
+            const btn = document.getElementById('timer-btn');
+            btn.disabled = true; btn.style.opacity = 0.6;
+            if (teaInterval) clearInterval(teaInterval);
+            teaInterval = setInterval(() => {
+                let mins = Math.floor(totalSeconds / 60), secs = totalSeconds % 60;
+                timerDisplay.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+                totalSeconds--;
+                if (totalSeconds < 0) {
+                    clearInterval(teaInterval);
+                    timerDisplay.textContent = "¡Disfruta tu té ☕!";
+                    btn.disabled = false; btn.style.opacity = 1; btn.textContent = "Cerrar pausa"; btn.onclick = closeActivityModal;
+                }
+            }, 1000);
+        }
+
+        let restInterval = null;
+        function startRestTimer() {
+            let totalSeconds = 180;
+            const timerDisplay = document.getElementById('rest-timer');
+            const btn = document.getElementById('rest-btn');
+            btn.disabled = true; btn.style.opacity = 0.6;
+            if (restInterval) clearInterval(restInterval);
+            restInterval = setInterval(() => {
+                let mins = Math.floor(totalSeconds / 60), secs = totalSeconds % 60;
+                timerDisplay.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+                totalSeconds--;
+                if (totalSeconds < 0) {
+                    clearInterval(restInterval);
+                    timerDisplay.textContent = "¡Descanso completado 💜!";
+                    btn.disabled = false; btn.style.opacity = 1; btn.textContent = "Cerrar"; btn.onclick = closeActivityModal;
+                }
+            }, 1000);
+        }
+
+        let audioCtx = null, isPlaying = false, oscillator1 = null, oscillator2 = null, gainNode = null, currentFreq1 = 174.61, currentFreq2 = 261.63;
+        function setSoundType(type) {
+            if (type === 1) { currentFreq1 = 174.61; currentFreq2 = 261.63; }
+            else if (type === 2) { currentFreq1 = 130.81; currentFreq2 = 196.00; }
+            if (isPlaying && oscillator1 && oscillator2) {
+                oscillator1.frequency.setValueAtTime(currentFreq1, audioCtx.currentTime);
+                oscillator2.frequency.setValueAtTime(currentFreq2, audioCtx.currentTime);
+            }
+        }
+        function toggleAudio() {
+            const iconEl = document.getElementById('music-icon'), textEl = document.getElementById('music-text');
+            if (!isPlaying) {
+                try {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                    gainNode = audioCtx.createGain(); gainNode.gain.setValueAtTime(0.02, audioCtx.currentTime);
+                    oscillator1 = audioCtx.createOscillator(); oscillator2 = audioCtx.createOscillator();
+                    oscillator1.type = 'sine'; oscillator1.frequency.setValueAtTime(currentFreq1, audioCtx.currentTime);
+                    oscillator2.type = 'sine'; oscillator2.frequency.setValueAtTime(currentFreq2, audioCtx.currentTime);
+                    const filter = audioCtx.createBiquadFilter(); filter.type = 'lowpass'; filter.frequency.setValueAtTime(300, audioCtx.currentTime);
+                    oscillator1.connect(filter); oscillator2.connect(filter); filter.connect(gainNode); gainNode.connect(audioCtx.destination);
+                    oscillator1.start(); oscillator2.start();
+                    isPlaying = true; iconEl.textContent = "🔊"; textEl.textContent = "Sonando";
+                } catch(e) { console.error(e); }
+            } else {
+                if (oscillator1 && oscillator2) { oscillator1.stop(); oscillator2.stop(); }
+                if (audioCtx) audioCtx.close();
+                isPlaying = false; iconEl.textContent = "🎵"; textEl.textContent = "Calma";
+            }
+        }
+
+        function initBreathingTimer() {
+            const instructionEl = document.getElementById('breath-instruction');
+            const timerEl = document.getElementById('breath-timer');
+            let secondsLeft = 4, phase = 0;
+            setInterval(() => {
+                timerEl.textContent = secondsLeft;
+                secondsLeft--;
+                if (secondsLeft < 0) {
+                    phase = (phase + 1) % 3;
+                    if (phase === 0) { instructionEl.textContent = "Inhala con calma..."; secondsLeft = 4; }
+                    else if (phase === 1) { instructionEl.textContent = "Mantén el aire..."; secondsLeft = 4; }
+                    else if (phase === 2) { instructionEl.textContent = "Exhala despacio..."; secondsLeft = 4; }
+                }
+            }, 1000);
+        }
+
+        window.onload = function() {
+            createStars();
+            getRandomReminder();
+            updateGarden();
+            initBreathingTimer();
+        };
+    </script>
+</body>
+</html>
